@@ -6,7 +6,7 @@ class AnswersDao {
   }
 
   async list_answers(id_usuario) {
-    const answers = await db("answers").where("id", id_usuario).select("*");
+    const answers = await db("answers").where("fk_answers_users", id_usuario).select("*");
     return answers;
   }
 

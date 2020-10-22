@@ -7,14 +7,14 @@ class PerfilDao {
   async list_perfil(id_usuario) {
     const perfil = await db("users").where("id", id_usuario).select("*");
     
-    for (const asks of perfil) {
+    for(const asks of perfil) {
       const total_asks = await db("asks")
         .where("fk_asks_users", id_usuario)
         .select("*");
       asks["posts"] = total_asks;
     }
 
-    for (const answers of perfil) {
+    for(const answers of perfil) {
       const total_answers = await db("answers")
         .where("fk_answers_users", id_usuario)
         .select("*");

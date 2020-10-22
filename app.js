@@ -2,6 +2,7 @@ const express = require('express');
 const routes =  require('./routes/index');
 const cors = require('cors');
 const bodyparser = require('body-parser');
+
 class App{
   constructor(){
     this.server = express();
